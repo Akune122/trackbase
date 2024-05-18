@@ -63,11 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <section>
-    <nav><a href="../index.html" style="text-decoration:none">Accueil</a></nav>
+    <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
     <nav><a href="main.php" style="text-decoration:none">TrackBase</a></nav>
 </section>
 
-<div class="container">
+<div class="login-container">
+<div class="login-box">
     <h2>Créer un compte</h2>
     <?php
     if (isset($error_message)) {
@@ -81,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Créer un compte">
     </form>
     <p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous ici</a>.</p>
+</div>
 </div>
 
 </body>

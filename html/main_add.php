@@ -19,7 +19,7 @@ if(isset($_SESSION['username'])) {
 if(isset($_GET['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: main.php");
+    header("Location: main_add.php");
     exit();
 }
 
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 </head>
 <body>
 <section class="afficher">
-    <nav><a href="../index.html" style="text-decoration:none">Accueil</a></nav>
+    <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
     <?php
     // Afficher le nom de l'utilisateur s'il est connecté
     if(isset($_SESSION['username'])) {

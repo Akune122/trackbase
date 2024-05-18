@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['pseudo'];
 
             // Rediriger l'utilisateur vers la page principale ou une page de succès
-            header("Location: main.php");
+            header("Location: ../index.php");
             exit();
         } else {
             $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <section>
-    <nav><a href="../index.html" style="text-decoration:none">Accueil</a></nav>
+    <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
     <nav><a href="main.php" style="text-decoration:none">TrackBase</a></nav>
 </section>
 

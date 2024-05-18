@@ -47,7 +47,7 @@ if(isset($_GET['s']) && !empty($_GET['s'])){
 
     <body>
         <section class="afficher">
-            <nav><a href="../index.html" style="text-decoration:none">Accueil</a></nav>
+            <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
             <?php
             // Afficher le nom de l'utilisateur s'il est connecté
             if(isset($_SESSION['username'])) {
