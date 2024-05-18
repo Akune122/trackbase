@@ -15,7 +15,8 @@ session_start();
         <nav><a href="html/main.php" style="text-decoration:none">TrackBase</a></nav>
         <?php
         if (isset($_SESSION['username'])) {
-            echo "<nav>Connecté en tant que : " . htmlspecialchars($_SESSION['username']) . "</nav>";
+            // Afficher le lien vers la page de profil avec le pseudo de l'utilisateur
+            echo "<a href='html/user.php' style='text-decoration:none'>Connecté en tant que : " . $_SESSION['username'] . "</a>";
             echo "<nav><a href='?logout=true' style='text-decoration:none'>Se déconnecter</a></nav>";
         } else {
             echo "<nav><a href='html/login.php' style='text-decoration:none'>Connexion</a></nav>";

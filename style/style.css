@@ -202,3 +202,25 @@ input[type="submit"]:hover {
 .login-box a:hover {
     text-decoration: underline;
 }
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #fff;
+    background-color: #6633CC;
+    border: 2px solid #6633CC;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #000033;
+    border-color: #000033;
+}
+
+.center-content form {
+    margin-bottom: 20px;
+}
