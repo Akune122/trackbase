@@ -1,0 +1,203 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+}
+
+h3 {
+    color: #333;
+    text-decoration-style: underline; 
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0ff; 
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6633CC;
+    padding: 10px 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6633CC;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav {
+    color: white;
+}
+
+
+
+article {
+    margin: 20px;
+    background-color: #fff; 
+    color: #333; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+    color: #6633CC; 
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+reponse {
+    text-align: center;
+    color: #6633CC; 
+}
+
+.center-content {
+    display: flex;         
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;      
+}
+
+.input {
+    padding: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 20px; 
+    font-size: 16px;
+}
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bouton {
+    background-color: #6633CC;
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bouton:hover {
+    background-color: #000033; 
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: #fff; 
+    color: #333; 
+}
+
+input[type="submit"] {
+    background-color: #6633CC; 
+    color: #fff; 
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #000033; 
+}
+
+.bouton-changer-page {
+    background-color: transparent; /* Couleur de fond transparente */
+    border: 2px solid #6633CC; /* Contour violet */
+    color: #6633CC; /* Couleur du texte violette */
+    padding: 10px 20px; /* Espacement intérieur */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.bouton-changer-page:hover {
+    background-color: #6633CC; /* Fond violet au survol */
+    color: white; /* Texte blanc au survol */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Occupier toute la hauteur de la fenêtre */
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #6633CC; /* Couleur en accord avec votre thème */
+}
+
+.login-box p {
+    text-align: center;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="submit"] {
+    margin-bottom: 15px;
+}
+
+.login-box a {
+    color: #6633CC;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
