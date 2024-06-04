@@ -74,12 +74,30 @@ session_start();
     </section>
 
     <p><br><br></p>
+    <p><br><br></p>
 
     <footer>
         <section>
-            <nav>Contact : 
-                <br>+33 6 59 32 72 14 
-                <br>trackbase@estiam.com
+                <nav>Contact : 
+                <br>Téléphone : +33 6 59 32 72 14 
+                <br>Adresse mail : trackbase@estiam.com
+                </nav> 
+        </section>
+        <section>
+        </section>
+        <section>
+            <nav> Liens vers notre trello : 
+            <br><a href ="https://trello.com/b/PPdfmOGM/trackbase">Notre trello</a>
+            </nav> 
+        </section>
+        <section>
+        </section>
+        <section>
+        </section>
+        <section>
+            <nav> page exe: 
+            <br><a href="html/conditions.php">Conditions générales d'utilisations </a>
+            <br><a href="html/presentation.php">A propos</a>
             </nav> 
         </section>
     </footer>
