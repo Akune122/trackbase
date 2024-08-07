@@ -1,3 +1,6 @@
+.grande-police {
+    font-size: 25px; /* Changez cette valeur selon vos besoins */
+}
 
 * {
     margin: 0;
@@ -34,8 +37,9 @@ section {
     align-items: center;
     background-color: #6633CC;
     padding: 10px 20px;
-    max-width: 100%;
+    width: 100%;
 }
+
 
 footer {
     display: flex;
@@ -43,7 +47,6 @@ footer {
     align-items: center;
     background-color: #6633CC;
     padding: 10px 20px;
-
 }
 
 nav a {
@@ -285,68 +288,4 @@ input[type="submit"]:hover {
 
 .form-commentaire input[type="submit"]:hover {
     background-color: #000033;
-}
-
-.bouton-changer-page {
-    background-color: transparent; /* Couleur de fond transparente */
-    border: 2px solid #6633CC; /* Contour violet */
-    color: #6633CC; /* Couleur du texte violette */
-    padding: 10px 20px; /* Espacement intérieur */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 5px; /* Coins arrondis */
-}
-
-.bouton-changer-page:hover {
-    background-color: #6633CC; /* Fond violet au survol */
-    color: white; /* Texte blanc au survol */
-}
-
-.active-button {
-    background-color: #6633CC; /* Couleur de fond des boutons actifs */
-    color: #fff; /* Couleur du texte des boutons actifs */
-}
-
-.center-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.proposition {
-    position: relative;
-}
-
-.like-button {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    padding: 5px 10px;
-    font-size: 12px;
-    background-color: #6633CC;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
-
-.fidelite {
-    text-align: right;
-}
-
-/* Style pour cacher les formulaires par défaut */
-#changePseudoForm,
-#changeEmailForm,
-#changePasswordForm {
-    display: none;
 }

@@ -16,6 +16,20 @@ if(isset($_GET['logout'])) {
     exit();
 }
 
+if(isset($_SESSION['username'])) {
+    // Récupérer les informations de l'utilisateur
+    $query = $bdd->prepare("SELECT pseudo, photo_profil FROM users WHERE pseudo = ?");
+    $query->execute([$_SESSION['username']]);
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+}
+
+// Afficher le message d'erreur s'il existe
+$error_message = "";
+if(isset($_SESSION['error'])) {
+    $error_message = $_SESSION['error'];
+    unset($_SESSION['error']);
+}
+
 // Définir le nombre de résultats par page
 $resultats_par_page = 5;
 
@@ -65,21 +79,31 @@ $allMusique->execute();
 
     <body>
         <section class="afficher">
-            <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
+        <nav><a href="../index.php" style="text-decoration:none"><img id="imgpetit" src="../image/logopetit.png"></a></nav>
             <?php
-            // Afficher le nom de l'utilisateur s'il est connecté
+            // Afficher la photo de profil s'il est connecté
             if(isset($_SESSION['username'])) {
-                echo "<nav><a href='user.php' style='text-decoration:none'>$user_message</a></nav>";
+                if ($user && $user['photo_profil']) {
+                    echo "<a href='user.php'><img src='" . htmlspecialchars($user['photo_profil']) . "' alt='Photo de profil' style='width: 50px; height: 50px; border-radius: 50%;'></a>";
+                }
                 echo "<nav><a href='?logout=true' style='text-decoration:none'>Se déconnecter</a></nav>";
             } else {
                 echo "<nav><a href='login.php' style='text-decoration:none'>Connexion</a></nav>";
             }
             ?>
+
         </section>
 
         <!-- Modification ici pour afficher toujours "TrackBase" -->
         <header><h1>TrackBase</h1></header>
-        
+
+        <?php
+        // Afficher le message d'erreur s'il existe
+        if($error_message) {
+            echo "<p style='color:red;'>$error_message</p>";
+        }
+        ?>
+
         <a href="main_add.php" class="redirection bouton-changer-page">Accéder à la page d'ajout de musique</a>
         
         <!-- Ajout de l'accès à la page tracksphere.php -->
@@ -167,5 +191,54 @@ $allMusique->execute();
             }
             ?>
         </article>
+
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+<footer>
+        <section>
+                <nav>Contact : 
+                <br>Téléphone : +33 6 59 32 72 14  
+                <br>Adresse mail : trackbase@estiam.com
+                </nav> 
+        </section>
+        <section>
+        </section>
+        <section>
+            <nav>
+            <br><a href ="https://trello.com/b/PPdfmOGM/trackbase">Trello</a>
+            <br><a href ="https://github.com/Akune122/trackbase">GitHub</a>
+            </nav> 
+        </section>
+      
+        <section>
+        </section>
+
+        <!-- Lien vers Instagram avec le logo -->
+        <a href="https://www.instagram.com/estiamofficiel/" target="_blank">
+        <img src="https://psfonttk.com/wp-content/uploads/2020/09/Instagram-Logo-Transparent.png" alt="Logo Instagram" style="width:50px;height:50px;">
+        </a>
+
+
+        <!-- Lien vers Twitter avec le logo -->
+        <a href="https://x.com/MetzCampus" target="_blank">
+        <img src="https://vectorseek.com/wp-content/uploads/2023/07/Twitter-X-Logo-Vector-01-2.jpg" alt="Logo Twitter" style="width:45px;height:45px;">
+        </a>
+
+        <!-- Lien vers LinkedIn avec le logo -->
+        <a href="https://fr.linkedin.com/company/polesupjeanxxiii" target="_blank">
+        <img src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" alt="Logo LinkedIn" style="width:45px;height:45px;">
+        </a>
+
+
+
+        <section>
+            <nav> 
+            <br><a href="conditions.php">Conditions générales d'utilisations </a>
+            <br><a href="presentation.php">A propos</a>
+            </nav> 
+        </section>
+    </footer>
     </body>
 </html>

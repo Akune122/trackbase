@@ -32,6 +32,8 @@ session_start();
         header("Location: html/main.php");
         exit();
     }
+
+    
     ?>
 
     <header>
@@ -73,34 +75,55 @@ session_start();
         </article>
     </section>
 
-    <p><br><br></p>
-    <p><br><br></p>
-
-    <footer>
+    <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+<footer>
         <section>
                 <nav>Contact : 
-                <br>Téléphone : +33 6 59 32 72 14 
+                <br>Téléphone : +33 6 59 32 72 14  
                 <br>Adresse mail : trackbase@estiam.com
                 </nav> 
         </section>
         <section>
         </section>
         <section>
-            <nav> Liens vers notre trello : 
-            <br><a href ="https://trello.com/b/PPdfmOGM/trackbase">Notre trello</a>
+            <nav>
+            <br><a href ="https://trello.com/b/PPdfmOGM/trackbase">Trello</a>
+            <br><a href ="https://github.com/Akune122/trackbase">GitHub</a>
             </nav> 
         </section>
+      
         <section>
         </section>
+
+        <!-- Lien vers Instagram avec le logo -->
+        <a href="https://www.instagram.com/estiamofficiel/" target="_blank">
+        <img src="https://psfonttk.com/wp-content/uploads/2020/09/Instagram-Logo-Transparent.png" alt="Logo Instagram" style="width:50px;height:50px;">
+        </a>
+
+
+        <!-- Lien vers Twitter avec le logo -->
+        <a href="https://x.com/MetzCampus" target="_blank">
+        <img src="https://vectorseek.com/wp-content/uploads/2023/07/Twitter-X-Logo-Vector-01-2.jpg" alt="Logo Twitter" style="width:45px;height:45px;">
+        </a>
+
+        <!-- Lien vers LinkedIn avec le logo -->
+        <a href="https://fr.linkedin.com/company/polesupjeanxxiii" target="_blank">
+        <img src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" alt="Logo LinkedIn" style="width:45px;height:45px;">
+        </a>
+
+
+
         <section>
-        </section>
-        <section>
-            <nav> page exe: 
+            <nav> 
             <br><a href="html/conditions.php">Conditions générales d'utilisations </a>
             <br><a href="html/presentation.php">A propos</a>
             </nav> 
         </section>
     </footer>
+
 
 </body>
 </html>

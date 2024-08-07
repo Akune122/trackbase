@@ -38,6 +38,13 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
+if(isset($_SESSION['username'])) {
+    // Récupérer les informations de l'utilisateur
+    $query = $bdd->prepare("SELECT pseudo, photo_profil FROM users WHERE pseudo = ?");
+    $query->execute([$_SESSION['username']]);
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+}
+
 // Traitement du formulaire d'ajout de musique
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (isset($user) && $user['administrateur'] == 1) {
@@ -96,16 +103,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 </head>
 <body>
 <section class="afficher">
-    <nav><a href="../index.php" style="text-decoration:none">Accueil</a></nav>
+<nav><a href="../index.php" style="text-decoration:none"><img id="imgpetit" src="../image/logopetit.png"></a></nav>
     <?php
-    // Afficher le nom de l'utilisateur s'il est connecté
-    if (isset($_SESSION['username'])) {
-        echo "<nav><a href='user.php' style='text-decoration:none'>$user_message</a></nav>";
-        echo "<nav><a href='?logout=true' style='text-decoration:none'>Se déconnecter</a></nav>";
-    } else {
-        echo "<nav><a href='login.php' style='text-decoration:none'>Connexion</a></nav>";
-    }
-    ?>
+            // Afficher la photo de profil s'il est connecté
+            if(isset($_SESSION['username'])) {
+                if ($user && $user['photo_profil']) {
+                    echo "<a href='user.php'><img src='" . htmlspecialchars($user['photo_profil']) . "' alt='Photo de profil' style='width: 50px; height: 50px; border-radius: 50%;'></a>";
+                }
+                echo "<nav><a href='?logout=true' style='text-decoration:none'>Se déconnecter</a></nav>";
+            } else {
+                echo "<nav><a href='login.php' style='text-decoration:none'>Connexion</a></nav>";
+            }
+            ?>
 </section>
 
 <header><h1>TrackBase</h1></header>
@@ -139,6 +148,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     }
     ?>
 </article>
+<p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+<footer>
+        <section>
+                <nav>Contact : 
+                <br>Téléphone : +33 6 59 32 72 14  
+                <br>Adresse mail : trackbase@estiam.com
+                </nav> 
+        </section>
+        <section>
+        </section>
+        <section>
+            <nav>
+            <br><a href ="https://trello.com/b/PPdfmOGM/trackbase">Trello</a>
+            <br><a href ="https://github.com/Akune122/trackbase">GitHub</a>
+            </nav> 
+        </section>
+      
+        <section>
+        </section>
+
+        <!-- Lien vers Instagram avec le logo -->
+        <a href="https://www.instagram.com/estiamofficiel/" target="_blank">
+        <img src="https://psfonttk.com/wp-content/uploads/2020/09/Instagram-Logo-Transparent.png" alt="Logo Instagram" style="width:50px;height:50px;">
+        </a>
+
+
+        <!-- Lien vers Twitter avec le logo -->
+        <a href="https://x.com/MetzCampus" target="_blank">
+        <img src="https://vectorseek.com/wp-content/uploads/2023/07/Twitter-X-Logo-Vector-01-2.jpg" alt="Logo Twitter" style="width:45px;height:45px;">
+        </a>
+
+        <!-- Lien vers LinkedIn avec le logo -->
+        <a href="https://fr.linkedin.com/company/polesupjeanxxiii" target="_blank">
+        <img src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" alt="Logo LinkedIn" style="width:45px;height:45px;">
+        </a>
+
+
+
+        <section>
+            <nav> 
+            <br><a href="conditions.php">Conditions générales d'utilisations </a>
+            <br><a href="presentation.php">A propos</a>
+            </nav> 
+        </section>
+    </footer>
 
 </body>
 </html>
